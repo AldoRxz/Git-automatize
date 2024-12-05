@@ -1,3 +1,5 @@
+# Script Ajustado para Windows con Git Bash
+
 #!/bin/bash
 
 # Ruta al repositorio local
