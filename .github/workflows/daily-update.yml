@@ -1,0 +1,20 @@
+name: Daily Update
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Ejecutar todos los días a la medianoche UTC
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Make changes and commit
+        run: |
+          echo "Actualizado el $(date +"%Y-%m-%d")" >> actualizacion_diaria.txt
+          git config --global user.name "Aldo"
+          git config --global user.email "aldo_roman13@hotmail.com"
+          git add .
+          git commit -m "Commit automatic daily - $(date +"%Y-%m-%d")"
+          git push
