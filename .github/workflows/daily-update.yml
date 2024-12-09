@@ -24,3 +24,4 @@ jobs:
           git add .
           git commit -m "Commit automatic daily - $(date +"%Y-%m-%d")"
           git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/AldoRxz/Git-automatize.git
+
